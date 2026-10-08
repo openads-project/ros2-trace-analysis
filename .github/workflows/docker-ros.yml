@@ -1,0 +1,31 @@
+name: docker-ros
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  docker-ros:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ika-rwth-aachen/docker-ros@main
+        with:
+          platform: amd64
+          target: dev,run
+          base-image: rwthika/ros2:jazzy-ros-core
+          rmw-implementation: rmw_zenoh_cpp
+          additional-files-dir: analysis
+          command: bash -ic "cd /docker-ros/additional-files && jupyter lab --ip='127.0.0.1' --NotebookApp.token='' & cd /trace && tracecompass"
+          enable-industrial-ci: true
+          enable-slim: false
+          label-maintainer: Raphael van Kempen <raphael.vankempen@ika.rwth-aachen.de>
+          label-authors: Raphael van Kempen <raphael.vankempen@ika.rwth-aachen.de>
+        env:
+          TARGET_CMAKE_ARGS: -DCMAKE_EXPORT_COMPILE_COMMANDS=1

@@ -1,0 +1,14 @@
+name: consistency
+
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 4 * * 1"
+
+jobs:
+  consistency:
+    uses: openads-project/openads-dev-environment/.github/workflows/consistency.yml@main
+    secrets: inherit
+    with:
+      skip-checks: compose_generator_is_idempotent,helm_generator_is_idempotent,required_root_ci_workflows,root_ci_workflows_match_templates
