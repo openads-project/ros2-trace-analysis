@@ -7,8 +7,6 @@
   <a href="https://github.com/openads-project/ros2-trace-analysis/blob/main/LICENSE"><img src="https://img.shields.io/github/license/openads-project/ros2-trace-analysis"/></a>
   <br>
   <a href="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/docker-ros.yml"><img src="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/docker-ros.yml/badge.svg"/></a>
-  <a href="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/compose-oci.yml"><img src="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/compose-oci.yml/badge.svg"/></a>
-  <a href="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/helm-oci.yml"><img src="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/helm-oci.yml/badge.svg"/></a>
   <a href="https://openads-project.github.io/ros2-trace-analysis"><img src="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/docs.yml/badge.svg"/></a>
   <a href="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/consistency.yml"><img src="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/consistency.yml/badge.svg"/></a>
 </p>
@@ -30,7 +28,7 @@ Start a container mounting the folder containing trace data and using the host's
 
 ```bash
 # Execute this in the folder containing trace data
-docker-run --volume $(pwd):/trace --network host gitlab.ika.rwth-aachen.de:5050/fb-fi/misc/ros2-tracing-analysis:latest
+docker-run --volume $(pwd):/trace --network host ghcr.io/openads-project/ros2-trace-analysis:latest
 ```
 
 ### Jupyter Notebook
@@ -139,9 +137,6 @@ colcon test-result --verbose
 ## 📝 Documentation
 
 Package and node interfaces are documented in the respective package READMEs listed below. Implementation details are found in the [Source Code Documentation](https://openads-project.github.io/ros2-trace-analysis).
-
-| Package | Description |
-| --- | --- |
 
 ## ⚖️ Licensing
 
