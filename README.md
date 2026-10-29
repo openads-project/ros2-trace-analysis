@@ -7,7 +7,6 @@
   <a href="https://github.com/openads-project/ros2-trace-analysis/blob/main/LICENSE"><img src="https://img.shields.io/github/license/openads-project/ros2-trace-analysis"/></a>
   <br>
   <a href="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/docker-ros.yml"><img src="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/docker-ros.yml/badge.svg"/></a>
-  <a href="https://openads-project.github.io/ros2-trace-analysis"><img src="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/docs.yml/badge.svg"/></a>
   <a href="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/consistency.yml"><img src="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/consistency.yml/badge.svg"/></a>
 </p>
 
@@ -16,7 +15,7 @@ This repository contains tools for analyzing ROS 2 execution traces to understan
 The provided Docker image allows statistical data analysis using Jupyter notebooks and graphical inspection using Eclipse Trace Compass.
 
 <p align="center">
-  <strong>🚀 <a href="#-quick-start">Quick Start</a></strong> • <strong>💻 <a href="#-development">Development</a></strong> • <strong>📝 <a href="#-documentation">Documentation</a></strong>
+  <strong>🚀 <a href="#-quick-start">Quick Start</a></strong> • <strong>💻 <a href="#-development">Development</a></strong>
 </p>
 
 > [!IMPORTANT]
@@ -114,29 +113,6 @@ ROS 2 uses LTTng (Linux Trace Toolkit: next generation) for tracing. Eclipse Tra
     > *Ctrl+Shift+P / Extensions: Show Recommended Extensions / Install Workspace Recommended Extensions (Cloud Download Icon)*
 1. Reopen the repository in a [Dev Container](https://code.visualstudio.com/docs/devcontainers/containers).
     > *Ctrl+Shift+P / Dev Containers: Rebuild and Reopen in Container*
-
-### Build
-
-> *Ctrl+Shift+B*
-
-```bash
-colcon build
-```
-
-### Run Tests
-
-> *Ctrl+Shift+P / Tasks: Run Test Task*
-
-```bash
-colcon build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=1
-colcon test
-colcon test-result --verbose
-```
-
-
-## 📝 Documentation
-
-Package and node interfaces are documented in the respective package READMEs listed below. Implementation details are found in the [Source Code Documentation](https://openads-project.github.io/ros2-trace-analysis).
 
 ## ⚖️ Licensing
 
