@@ -23,7 +23,7 @@ jobs:
           rmw-implementation: rmw_zenoh_cpp
           additional-files-dir: analysis
           command: bash -ic "cd /docker-ros/additional-files && jupyter lab --ip='127.0.0.1' --NotebookApp.token='' & cd /trace && tracecompass"
-          enable-industrial-ci: true
+          enable-industrial-ci: false
           enable-slim: false
           label-maintainer: Raphael van Kempen <raphael.vankempen@ika.rwth-aachen.de>
           label-authors: Raphael van Kempen <raphael.vankempen@ika.rwth-aachen.de>
