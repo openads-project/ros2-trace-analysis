@@ -4,5 +4,9 @@ tar -xzf trace-compass-*-linux.gtk.x86_64.tar.gz -C /opt
 ln -s /opt/trace-compass/tracecompass /usr/local/bin/tracecompass
 rm trace-compass-*-linux.gtk.x86_64.tar.gz
 
+# install JupyterLab; first replace the Debian-installed packages that pip cannot uninstall (no RECORD file)
+pip install --ignore-installed --no-deps traitlets jsonschema lark
+pip install jupyterlab
+
 # make sure that the additional files are accessible in the container
 chmod -R a+rw /docker-ros/additional-files
