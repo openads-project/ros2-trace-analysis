@@ -28,7 +28,7 @@ The provided Docker image allows statistical data analysis using Jupyter noteboo
 
 ## 🚀 Quick Start
 
-ROS 2 trace data can be captured, e.g. from modules running on the critical path in [OpenADStack](https://github.com/openads-project/openadstack/blob/tracing/docs/system-analysis.md). The recorded traces can be analyzed with containerized tools provided in this repository.
+ROS 2 trace data can be captured, e.g. from modules running on the critical path in [OpenADStack](https://openads-project.github.io/openadstack/openadstack/docs/system-analysis.html). The recorded traces can be analyzed with containerized tools provided in this repository.
 
 ```bash
 # allow graphical output from Docker containers
