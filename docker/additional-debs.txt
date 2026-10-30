@@ -1,0 +1,10 @@
+default-jre
+dbus-x11
+fonts-dejavu
+fonts-liberation
+fonts-noto
+fonts-noto-color-emoji
+fontconfig
+libcanberra-gtk-module
+libcanberra-gtk3-module
+texlive-xetex

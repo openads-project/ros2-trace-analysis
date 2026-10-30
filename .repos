@@ -1,0 +1,5 @@
+repositories:
+  tracetools_analysis:
+    type: git
+    url: https://github.com/RaphvK/tracetools_analysis.git
+    version: jazzy-ika

@@ -22,10 +22,10 @@ jobs:
           base-image: rwthika/ros2:jazzy-ros-core
           rmw-implementation: rmw_zenoh_cpp
           additional-files-dir: analysis
-          command: bash -ic "cd /docker-ros/additional-files && jupyter lab --ip='127.0.0.1' --NotebookApp.token='' & cd /trace && tracecompass"
-          enable-industrial-ci: true
+          command: bash -ic "cd /docker-ros/additional-files && jupyter lab --ip='127.0.0.1' --ServerApp.token='' --allow-root & cd /trace && tracecompass"
+          enable-industrial-ci: false
           enable-slim: false
-          label-maintainer: Raphael van Kempen <raphael.vankempen@ika.rwth-aachen.de>
-          label-authors: Raphael van Kempen <raphael.vankempen@ika.rwth-aachen.de>
+          label-maintainer: Institute for Automotive Engineering (ika), RWTH Aachen University <opensource@ika.rwth-aachen.de>
+          label-authors: Institute for Automotive Engineering (ika), RWTH Aachen University <opensource@ika.rwth-aachen.de>
         env:
           TARGET_CMAKE_ARGS: -DCMAKE_EXPORT_COMPILE_COMMANDS=1

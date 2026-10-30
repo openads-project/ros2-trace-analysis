@@ -1,0 +1,5 @@
+services:
+
+  ros2-trace-analysis:
+    image: ghcr.io/openads-project/ros2-trace-analysis:v1.0.0
+    network_mode: host
