@@ -1,5 +1,5 @@
 include:
-  - oci://ghcr.io/openads-project/ros2-trace-analysis/compose:latest_init_ci
+  - oci://ghcr.io/openads-project/ros2-trace-analysis/compose:init
 
 services:
 
@@ -10,5 +10,4 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - ${XAUTHORITY_DOCKER:-/dev/null:/dev/null}${XAUTHORITY_DOCKER:+:/.Xauthority:ro}
-      - ${TRACE_DIR}:/trace
-
+      - ${TRACE_DIR:-.}:/trace

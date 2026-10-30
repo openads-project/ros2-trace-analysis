@@ -38,7 +38,7 @@ xhost +local:
 export TRACE_DIR=.
 
 # start Eclipse Trace Compass and JupyterLab for trace analysis (stop with CTRL-C)
-docker compose -f deployment/compose/docker-compose.yml up
+docker compose up
 ```
 
 See [📝 Documentation](#-documentation) for more information on how traces can be analyzed.
