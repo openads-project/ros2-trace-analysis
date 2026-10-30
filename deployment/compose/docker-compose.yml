@@ -2,11 +2,5 @@ services:
 
   ros2-trace-analysis:
     image: ghcr.io/openads-project/ros2-trace-analysis:latest_init_ci
-    environment:
-      - DISPLAY=${DISPLAY_X11_DOCKER:-${DISPLAY:-""}}
-      - XAUTHORITY${XAUTHORITY_DOCKER:+=/.Xauthority}
-    volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix
-      - ${XAUTHORITY_DOCKER:-/dev/null:/dev/null}${XAUTHORITY_DOCKER:+:/.Xauthority:ro}
-      - ${TRACE_DIR:-.}:/trace
     network_mode: host
+
