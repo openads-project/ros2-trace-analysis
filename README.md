@@ -10,6 +10,8 @@
   <a href="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/consistency.yml"><img src="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/consistency.yml/badge.svg"/></a>
 </p>
 
+**ROS 2 Trace Analysis with Jupyter Notebooks and Eclipse Trace Compass**
+
 This repository contains tools for analyzing ROS 2 execution traces to understand system performance and timing behavior.
 
 The provided Docker image allows statistical data analysis using Jupyter notebooks and graphical inspection using Eclipse Trace Compass.
@@ -58,7 +60,7 @@ The [trace-critical-path.ipynb](analysis/trace-critical-path.ipynb) notebook ana
 
 - Loads trace data from a specified path
 - Uses [tracetools_analysis](https://github.com/ros-tracing/tracetools_analysis) to process ROS 2 tracing events
-- Identifies message flow paths from an specified end topic to specified begin topics
+- Identifies message flow paths from a specified end topic to specified begin topics
 - Calculates end-to-end latencies across callback chains
 - Generates visualizations showing:
   - **Critical path durations**: Histogram showing duration distribution and graph showing path duration over time
@@ -79,11 +81,11 @@ The [trace-critical-path.ipynb](analysis/trace-critical-path.ipynb) notebook ana
 
 ROS 2 uses LTTng (Linux Trace Toolkit: next generation) for tracing. Eclipse Trace Compass can directly import and visualize these traces:
 
-1. Select `File` --> `Import ...` --> Select root directory: `/trace` --> Chack the corresponding timestamped folders per container in the list --> `Finish`
-2. Extend `Tracing` in the Project Explorer --> Right-Click on `Traces` in the Project Explorer --> `Open As Experiment` --> `ROS 2 Expermient (Incubator)`
-3. Extend `Experiments` in the Project Explorer --> `Experiment` --> `Views` --> `ROS 2 Messages` --> Right click on `Messages (incubator)` --> `Open`
-4. Inspect the message flow, hold CTRL and scroll to zoom in, hold Shift to scroll left/right. Click an one of the bars in the message flow to follow, then click the *Follow this element* button above the graph to analyze the message flow.
-5. Extend `Experiments` in the Project Explorer --> `Experiment` --> `Views` --> `ROS 2 Message Flow` --> Right click on `Message Flow (incubator)` --> `Open`
+1. Select `File` --> `Import ...` --> Select root directory: `/trace` --> Check the corresponding timestamped folders per container in the list --> `Finish`
+2. Expand `Tracing` in the Project Explorer --> Right-Click on `Traces` in the Project Explorer --> `Open As Experiment` --> `ROS 2 Experiment (Incubator)`
+3. Expand `Experiments` in the Project Explorer --> `Experiment` --> `Views` --> `ROS 2 Messages` --> Right click on `Messages (incubator)` --> `Open`
+4. Inspect the message flow, hold CTRL and scroll to zoom in, hold Shift to scroll left/right. Click on one of the bars in the message flow to follow, then click the *Follow this element* button above the graph to analyze the message flow.
+5. Expand `Experiments` in the Project Explorer --> `Experiment` --> `Views` --> `ROS 2 Message Flow` --> Right click on `Message Flow (incubator)` --> `Open`
 6. You should see the message flow.
 
 ### Tips
