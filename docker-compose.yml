@@ -1,5 +1,5 @@
 include:
-  - oci://ghcr.io/openads-project/ros2-trace-analysis/compose:init
+  - oci://ghcr.io/openads-project/ros2-trace-analysis/compose:v1.0.0
 
 services:
 
