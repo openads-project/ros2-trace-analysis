@@ -7,6 +7,9 @@
   <a href="https://github.com/openads-project/ros2-trace-analysis/blob/main/LICENSE"><img src="https://img.shields.io/github/license/openads-project/ros2-trace-analysis"/></a>
   <br>
   <a href="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/docker-ros.yml"><img src="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/docker-ros.yml/badge.svg"/></a>
+  <a href="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/compose-oci.yml"><img src="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/compose-oci.yml/badge.svg"/></a>
+  <a href="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/helm-oci.yml"><img src="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/helm-oci.yml/badge.svg"/></a>
+  <a href="https://openads-project.github.io/ros2-trace-analysis"><img src="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/docs.yml/badge.svg"/></a>
   <a href="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/consistency.yml"><img src="https://github.com/openads-project/ros2-trace-analysis/actions/workflows/consistency.yml/badge.svg"/></a>
 </p>
 
