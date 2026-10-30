@@ -20,7 +20,7 @@ This repository contains tools for analyzing ROS 2 execution traces to understan
 The provided Docker image allows statistical data analysis using Jupyter notebooks and graphical inspection using Eclipse Trace Compass.
 
 <p align="center">
-  <strong>🚀 <a href="#-quick-start">Quick Start</a></strong> • <strong>💻 <a href="#-development">Development</a></strong>
+  <strong>🚀 <a href="#-quick-start">Quick Start</a></strong> • <strong>💻 <a href="#-development">Development</a></strong> • <strong>📝 <a href="#-documentation">Documentation</a></strong>
 </p>
 
 > [!IMPORTANT]
@@ -28,14 +28,56 @@ The provided Docker image allows statistical data analysis using Jupyter noteboo
 
 ## 🚀 Quick Start
 
-Start a container mounting the folder containing trace data and using the host's network to be able to access the Jupyter Lab server. This works best using [docker-run-cli](https://pypi.org/project/docker-run-cli/):
+ROS 2 trace data can be captured, e.g. from modules running on the critical path in [OpenADStack](https://github.com/openads-project/openadstack/blob/tracing/docs/system-analysis.md). The recorded traces can be analyzed with containerized tools provided in this repository.
 
 ```bash
-# Execute this in the folder containing trace data
-docker-run --volume $(pwd):/trace --network host ghcr.io/openads-project/ros2-trace-analysis:latest
+# allow graphical output from Docker containers
+xhost +local:
+
+# configure path to directory containing trace data
+export TRACE_DIR=.
+
+# start Eclipse Trace Compass and JupyterLab for trace analysis (stop with CTRL-C)
+docker compose -f deployment/compose/docker-compose.yml up
 ```
 
-### Jupyter Notebook
+See [📝 Documentation](#-documentation) for more information on how traces can be analyzed.
+
+## 💻 Development
+
+### Set up Development Environment
+
+1. Clone the repository.
+    ```bash
+    git clone https://github.com/openads-project/ros2-trace-analysis.git
+    ```
+1. Initialize the [`.openads-dev-environment`](https://github.com/openads-project/openads-dev-environment) submodule containing development environment configuration.
+    ```bash
+    cd ros2-trace-analysis
+    git submodule update --init --recursive
+    ```
+1. Open the repository in [Visual Studio Code](https://code.visualstudio.com).
+    ```bash
+    code .
+    ```
+1. Install the recommended VS Code extensions.
+    > *Ctrl+Shift+P / Extensions: Show Recommended Extensions / Install Workspace Recommended Extensions (Cloud Download Icon)*
+1. Reopen the repository in a [Dev Container](https://code.visualstudio.com/docs/devcontainers/containers).
+    > *Ctrl+Shift+P / Dev Containers: Rebuild and Reopen in Container*
+
+### Build
+
+> *Ctrl+Shift+B*
+
+```bash
+colcon build
+```
+
+## 📝 Documentation
+
+ROS 2 traces can be statistically analyzed using the provided [Jupyter Notebooks](#jupyter-notebooks) or graphically using [Eclipse Trace Compass](#eclipse-trace-compass).
+
+### Jupyter Notebooks
 
 1. Connect to the JupyterLab server with your browser. The URL is shown in the container log, usually [http://localhost:8888](http://localhost:8888).
 2. Set the `trace_dir` variable in the first cell to your trace directory
@@ -96,28 +138,6 @@ ROS 2 uses LTTng (Linux Trace Toolkit: next generation) for tracing. Eclipse Tra
 - Keep trace windows short to reduce file size.
 - Restart the ROS stack before capturing a new trace session to make sure that initialization data is captured, which is required for visualization in Eclipse Trace Compass.
 - Make sure that traced ROS nodes are started as `dockeruser`. Otherwise, make sure that Eclipse Trace Compass has file permissions to read the trace data.
-
-## 💻 Development
-
-### Set up Development Environment
-
-1. Clone the repository.
-    ```bash
-    git clone https://github.com/openads-project/ros2-trace-analysis.git
-    ```
-1. Initialize the [`.openads-dev-environment`](https://github.com/openads-project/openads-dev-environment) submodule containing development environment configuration.
-    ```bash
-    cd ros2-trace-analysis
-    git submodule update --init --recursive
-    ```
-1. Open the repository in [Visual Studio Code](https://code.visualstudio.com).
-    ```bash
-    code .
-    ```
-1. Install the recommended VS Code extensions.
-    > *Ctrl+Shift+P / Extensions: Show Recommended Extensions / Install Workspace Recommended Extensions (Cloud Download Icon)*
-1. Reopen the repository in a [Dev Container](https://code.visualstudio.com/docs/devcontainers/containers).
-    > *Ctrl+Shift+P / Dev Containers: Rebuild and Reopen in Container*
 
 ## ⚖️ Licensing
 
