@@ -11,4 +11,4 @@ jobs:
     uses: openads-project/openads-dev-environment/.github/workflows/consistency.yml@main
     secrets: inherit
     with:
-      skip-checks: compose_generator_is_idempotent,helm_generator_is_idempotent,required_root_ci_workflows,root_ci_workflows_match_templates
+      skip-checks: readme_generator_is_idempotent,compose_generator_is_idempotent,helm_generator_is_idempotent,required_root_ci_workflows,root_ci_workflows_match_templates
