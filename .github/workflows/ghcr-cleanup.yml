@@ -9,3 +9,5 @@ jobs:
   ghcr-cleanup:
     uses: openads-project/openads-dev-environment/.github/workflows/ghcr-cleanup.yml@main
     secrets: inherit
+    with:
+      cleanup-helm: false
